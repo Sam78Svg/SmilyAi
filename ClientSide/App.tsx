@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import GlassFold from './components/Background'
 import About from './components/About'
 import Home from './components/Home'
-import './App.css'
 
 function App() {
   const cssProps = {
