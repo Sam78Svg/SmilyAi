@@ -1,7 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import GlassFold from './components/Background'
-import About from './components/About'
-import Home from './components/Home'
+import GlassFold from './components/Background';
+import { lazy, Suspense } from "react";
+
+//RouteImports  
+const ChatInerFace = lazy(() => import("./components/ChatInterFace"));
+const About = lazy(() => import('./components/About'));
+const Home = lazy(() => import('./components/Home'));
 
 function App() {
   const cssProps = {
@@ -17,10 +21,16 @@ function App() {
     <GlassFold {...cssProps}>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" index={true} element={<Home />} />
           <Route path="/about" element={<About />} />
         </Routes>
-      </Router >
+        {/* a temporary page for loading animation*/}
+        <Suspense fallback={<div> Loading Page .....</div>}>
+          <Routes>
+            <Route path="/Chat" element={<ChatInerFace />} />
+          </Routes>
+        </Suspense>
+      </Router>
     </GlassFold>
   );
 }
