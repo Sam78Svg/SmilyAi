@@ -9,4 +9,12 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  server: {
+    watch: {
+      usePolling: true
+    }
+  },
+  resolve: {
+    dedupe: ['react', 'react-dom']
+  }
 })
