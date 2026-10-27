@@ -764,8 +764,21 @@ export default function ChatInterFace() {
                             </button>
                         </div>
                         <div className="rounded-xl border border-[#2A2F38] bg-[#1B1F26] p-4 text-sm text-[#B4BAC5]">
-                            API key management is not connected in this interface yet. No
-                            credentials are collected or stored here.
+                            <form action="#">
+                                <div>
+                                    <label className="text-dark fs-3" htmlFor="KeyProvider">Key Provider:</label>
+                                    <select name="Key Providers" id="KeyProviders">
+                                        <option value="Select Key Provider">Select Key Provider...</option>
+                                        {
+                                            models.map((key) =>
+                                                <option value={key.provider}>
+                                                    {key.provider}
+                                                </option>
+                                            )
+                                        }
+                                    </select>
+                                </div>
+                            </form>
                         </div>
                         <div className="flex justify-end">
                             <button
