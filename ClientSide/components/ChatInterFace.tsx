@@ -764,21 +764,23 @@ export default function ChatInterFace() {
                             </button>
                         </div>
                         <div className="rounded-xl border border-[#2A2F38] bg-[#1B1F26] p-4 text-sm text-[#B4BAC5]">
-                            <form action="#">
+                            <div>
                                 <div>
-                                    <label className="text-dark fs-3" htmlFor="KeyProvider">Key Provider:</label>
-                                    <select name="Key Providers" id="KeyProviders">
+                                    <label className="block text-sm font-medium text-[#ECEDEF]" htmlFor="key-provider">
+                                        Key Provider:
+                                    </label>
+                                    <select className="mt-2 min-h-11 w-full rounded-lg border border-[#3A404B] bg-[#0E1013] px-3 text-[#ECEDEF]" name="key-provider" id="key-provider">
                                         <option value="Select Key Provider">Select Key Provider...</option>
                                         {
-                                            models.map((key) =>
-                                                <option value={key.provider}>
-                                                    {key.provider}
+                                            models.map((model) =>
+                                                <option key={model.provider} value={model.provider}>
+                                                    {model.provider}
                                                 </option>
                                             )
                                         }
                                     </select>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                         <div className="flex justify-end">
                             <button

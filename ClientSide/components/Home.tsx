@@ -5,16 +5,13 @@ export default function Home() {
     return (
         <div>
             <header>
-                <nav>
-                    <Navigationbar />
-                </nav>
+                <Navigationbar />
             </header>
-            <main className="border-4 border-white/40 bg-black/40 text-whitek">
-                <div className="bg-black ">
-                    hellow world
-                    welcome to my website
-                </div>
-            </main>
+                <main className="relative z-10 pt-24 text-center text-white">
+                    <h1 className="text-4xl font-semibold">
+                        Welcome to the Smily AI
+                    </h1>
+                </main>
             <footer>
                 <FooterSection />
             </footer>
