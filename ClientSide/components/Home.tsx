@@ -12,6 +12,7 @@ export default function Home() {
             <main className="border-4 border-white/40 bg-black/40 text-whitek">
                 <div className="bg-black ">
                     hellow world
+                    welcome to my website
                 </div>
             </main>
             <footer>
