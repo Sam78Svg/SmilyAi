@@ -80,6 +80,8 @@ export default function ChatInterFace() {
     const [libraryFiles, setLibraryFiles] = useState<LocalFile[]>([]);
     const [attachedFiles, setAttachedFiles] = useState<LocalFile[]>([]);
     const [isDraggingFiles, setIsDraggingFiles] = useState(false);
+    const [keyProvider, setKeyProvider] = useState('');
+    const [userKey, setUserKey] = useState('');
     const nextFileId = useRef(0);
     const attachInput = useRef<HTMLInputElement>(null);
     const libraryInput = useRef<HTMLInputElement>(null);
@@ -118,6 +120,11 @@ export default function ChatInterFace() {
         setDraft("");
         setAttachedFiles([]);
     };
+
+    const getApiKey = () => {
+        console.log(userKey);
+        console.log(keyProvider);
+    }
 
     const onComposerKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
         if (event.key === "Enter" && !event.shiftKey) {
@@ -766,10 +773,10 @@ export default function ChatInterFace() {
                         <div className="rounded-xl border border-[#2A2F38] bg-[#1B1F26] p-4 text-sm text-[#B4BAC5]">
                             <div>
                                 <div>
-                                    <label className="block text-sm font-medium text-[#ECEDEF]" htmlFor="key-provider">
+                                    <label className="block text-sm font-medium text-[#ECEDEF]" htmlFor="keyProvider">
                                         Key Provider:
                                     </label>
-                                    <select className="mt-2 min-h-11 w-full rounded-lg border border-[#3A404B] bg-[#0E1013] px-3 text-[#ECEDEF]" name="key-provider" id="key-provider">
+                                    <select className="mt-2 min-h-11 w-full rounded-lg border border-[#3A404B] bg-[#0E1013] px-3 text-[#ECEDEF]" name="keyProvider" id="keyProvider" onChange={(e) => setKeyProvider(e.target.value)}>
                                         <option value="Select Key Provider">Select Key Provider...</option>
                                         {
                                             models.map((model) =>
@@ -780,12 +787,18 @@ export default function ChatInterFace() {
                                         }
                                     </select>
                                 </div>
+                                <div>
+                                    <label className="block mt-1.5 text-sm font-medium text-[#ECEDEF]" htmlFor="userKey">
+                                        Key Provider:
+                                    </label>
+                                    <input type="text" name="userKey" id="UserKey" onChange={(e) => setUserKey(e.target.value)} placeholder="Enter your api Key ..." className="mt-2 min-h-11 w-full rounded-lg border border-[#3A404B] bg-[#0E1013] px-3 text-[#ECEDEF]" />
+                                </div>
                             </div>
                         </div>
                         <div className="flex justify-end">
                             <button
                                 type="button"
-                                onClick={() => setKeysOpen(false)}
+                                onClick={() => { setKeysOpen(false); getApiKey() }}
                                 className={`${sharedButtonStyles} min-h-11 bg-[#8FE3B0] px-4 font-semibold text-[#0B1A12] hover:brightness-95`}
                             >
                                 Done
