@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node ServerSide/server.ts",
-    "devserver": "nodemon ServerSide/server.ts"
+    "devserver": "node --watch ServerSide/server.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

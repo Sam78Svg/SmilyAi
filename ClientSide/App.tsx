@@ -20,13 +20,10 @@ function App() {
   return (
     <GlassFold {...cssProps}>
       <Router>
-        <Routes>
-          <Route path="/" index={true} element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-        {/* a temporary page for loading animation*/}
         <Suspense fallback={<div> Loading Page .....</div>}>
           <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/Chat" element={<ChatInerFace />} />
           </Routes>
         </Suspense>
