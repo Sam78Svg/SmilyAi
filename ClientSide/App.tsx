@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import GlassFold from './components/Background';
+import GlassFold from "./components/Background";
 import { lazy, Suspense } from "react";
 
 //RouteImports  
