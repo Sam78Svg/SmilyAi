@@ -3,19 +3,20 @@ import { type Request, type Response } from "express";
 
 const router = express.Router();
 
-router.get("/login", (res: Response, req: Request) => {
+router.get("/login", (_req: Request, res: Response) => {
     res.send("Login route");
 });
 
-router.post("/logout", (res: Response, req: Request) => {
+router.post("/logout", (_req: Request, res: Response) => {
     res.send("Logout route");
 });
 
-router.post("/forgot-password", (res: Response, req: Request) => {
+router.post("/forgot-password", (_req: Request, res: Response) => {
     res.send("Forgot password route");
 });
 
-router.post("/register", (res: Response, req: Request) => {
+router.post("/register", (_req: Request, res: Response) => {
     res.send("Register route");
 });
 
+export default router;

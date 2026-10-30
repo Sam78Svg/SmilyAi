@@ -26,6 +26,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "clientSide"
+    "ClientSide"
   ]
 }
