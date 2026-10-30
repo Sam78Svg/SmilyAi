@@ -1,11 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 import GlassFold from './components/Background';
 import { lazy, Suspense } from "react";
+import Navigationbar from "./components/Navigationbar";
+import FooterSection from "./components/FooterSection";
 
 //RouteImports  
 const ChatInerFace = lazy(() => import("./components/ChatInterFace"));
 const About = lazy(() => import('./components/About'));
 const Home = lazy(() => import('./components/Home'));
+const Support = lazy(() => import("./components/Support"));
+
+function SiteLayout() {
+  return (
+    <div className="min-h-screen">
+      <header>
+        <Navigationbar />
+      </header>
+      <Outlet />
+      <footer>
+        <FooterSection />
+      </footer>
+    </div>
+  );
+}
 
 function App() {
   const cssProps = {
@@ -22,9 +39,12 @@ function App() {
       <Router>
         <Suspense fallback={<div> Loading Page .....</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/Chat" element={<ChatInerFace />} />
+            <Route element={<SiteLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/support" element={<Support />} />
+            </Route>
+            <Route path="/chat" element={<ChatInerFace />} />
           </Routes>
         </Suspense>
       </Router>

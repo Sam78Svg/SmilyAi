@@ -179,10 +179,10 @@ export default function ChatInterFace() {
 
     return (
         <div className="flex min-h-screen bg-[#0E1013] font-sans text-[15px] leading-6 text-[#ECEDEF]">
-            <aside className="hidden min-h-screen w-[260px] shrink-0 flex-col gap-5 border-r border-[#2A2F38] bg-[#14171C] px-4 py-5 sm:flex">
+            <aside className="hidden min-h-screen w-65 shrink-0 flex-col gap-5 border-r border-[#2A2F38] bg-[#14171C] px-4 py-5 sm:flex">
                 <div className="flex items-center gap-2.5 px-2">
                     <span className="grid h-8 w-8 place-items-center rounded-[9px] bg-[#8FE3B0] text-[#0B1A12]">
-                        <Icon className="h-[18px] w-[18px]">
+                        <Icon className="h-4.5 w-4.5">
                             <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" />
                         </Icon>
                     </span>
@@ -242,12 +242,12 @@ export default function ChatInterFace() {
                             onClick={startNewChat}
                             className={`${sharedButtonStyles} grid h-10 w-10 place-items-center text-[#ECEDEF] hover:bg-[#2A303A]`}
                         >
-                            <Icon className="h-[18px] w-[18px]">
+                            <Icon className="h-4.5 w-4.5">
                                 <path d="M12 5v14M5 12h14" />
                             </Icon>
                         </button>
                     </div>
-                    <div className="flex max-h-[460px] flex-col gap-0.5 overflow-y-auto">
+                    <div className="flex max-h-115 flex-col gap-0.5 overflow-y-auto">
                         {history.map((item, index) => (
                             <button
                                 key={`${item}-${index}`}
@@ -307,7 +307,7 @@ export default function ChatInterFace() {
                                         setModelMenuOpen((open) => !open);
                                         setAccountMenuOpen(false);
                                     }}
-                                    className={`${sharedButtonStyles} flex min-h-12 min-w-0 items-center gap-3 border border-[#2A2F38] bg-[#1B1F26] px-3 text-left hover:bg-[#2A303A] sm:min-w-[260px] sm:px-3.5`}
+                                    className={`${sharedButtonStyles} flex min-h-12 min-w-0 items-center gap-3 border border-[#2A2F38] bg-[#1B1F26] px-3 text-left hover:bg-[#2A303A] sm:min-w-65 sm:px-3.5`}
                                 >
                                     <span className="flex min-w-0 flex-1 flex-col">
                                         <span className="truncate font-semibold">{selectedModel.name}</span>
@@ -315,7 +315,7 @@ export default function ChatInterFace() {
                                             {selectedModel.provider}
                                         </span>
                                     </span>
-                                    <Icon className="h-[18px] w-[18px] shrink-0">
+                                    <Icon className="h-4.5 w-4.5 shrink-0">
                                         <path d="M6 9l6 6 6-6" />
                                     </Icon>
                                 </button>
@@ -330,7 +330,7 @@ export default function ChatInterFace() {
                                         <div
                                             role="listbox"
                                             aria-label="Models"
-                                            className="absolute right-0 top-14 z-40 max-h-[440px] w-[min(340px,calc(100vw-32px))] overflow-y-auto rounded-[14px] border border-[#2A2F38] bg-[#14171C] p-2 shadow-2xl"
+                                            className="absolute right-0 top-14 z-40 max-h-110 w-[min(340px,calc(100vw-32px))] overflow-y-auto rounded-[14px] border border-[#2A2F38] bg-[#14171C] p-2 shadow-2xl"
                                         >
                                             {models.map((model) => (
                                                 <button
@@ -351,7 +351,7 @@ export default function ChatInterFace() {
                                                         </span>
                                                     </span>
                                                     {selectedModel.name === model.name && (
-                                                        <Icon className="h-[18px] w-[18px] shrink-0 text-[#8FE3B0]">
+                                                        <Icon className="h-4.5 w-4.5 shrink-0 text-[#8FE3B0]">
                                                             <path d="M5 12l5 5 9-10" />
                                                         </Icon>
                                                     )}
@@ -398,7 +398,7 @@ export default function ChatInterFace() {
                                     <div
                                         role="menu"
                                         aria-label="Account"
-                                        className="absolute right-0 top-[52px] z-40 flex w-[280px] max-w-[calc(100vw-32px)] flex-col gap-1 rounded-[14px] border border-[#2A2F38] bg-[#14171C] p-2 shadow-2xl"
+                                        className="absolute right-0 top-13 z-40 flex w-70 max-w-[calc(100vw-32px)] flex-col gap-1 rounded-[14px] border border-[#2A2F38] bg-[#14171C] p-2 shadow-2xl"
                                     >
                                         <div className="mb-1 flex flex-col gap-0.5 border-b border-[#2A2F38] px-2.5 pb-3 pt-2.5">
                                             <span className="text-xs text-[#9BA1AD]">Workspace</span>
@@ -440,7 +440,7 @@ export default function ChatInterFace() {
 
                 {activeView === "home" && (
                     <section className="flex flex-1 flex-col items-center px-5 py-10 md:px-7">
-                        <div className="flex w-full max-w-[980px] flex-col gap-10">
+                        <div className="flex w-full max-w-245 flex-col gap-10">
                             <div className="flex flex-col gap-2.5">
                                 <h2 className="m-0 text-[clamp(30px,5vw,44px)] font-semibold leading-tight tracking-tight">
                                     Welcome back
@@ -460,22 +460,22 @@ export default function ChatInterFace() {
                                     >
                                         <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#232933] text-[#8FE3B0]">
                                             {view === "chat" ? (
-                                                <Icon className="h-[22px] w-[22px]">
+                                                <Icon className="h-5.5 w-5.5">
                                                     <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z" />
                                                 </Icon>
                                             ) : view === "image" ? (
-                                                <Icon className="h-[22px] w-[22px]">
+                                                <Icon className="h-5.5 w-5.5">
                                                     <rect x="3" y="3" width="18" height="18" rx="3" />
                                                     <circle cx="9" cy="9" r="1.6" />
                                                     <path d="M21 16l-5-5-8 8" />
                                                 </Icon>
                                             ) : view === "video" ? (
-                                                <Icon className="h-[22px] w-[22px]">
+                                                <Icon className="h-5.5 w-5.5">
                                                     <rect x="2" y="5" width="14" height="14" rx="3" />
                                                     <path d="M16 10l6-3v10l-6-3z" />
                                                 </Icon>
                                             ) : (
-                                                <FileIcon className="h-[22px] w-[22px]" />
+                                                <FileIcon className="h-5.5 w-5.5" />
                                             )}
                                         </span>
                                         <span className="mt-auto flex flex-col gap-0.5">
@@ -499,7 +499,7 @@ export default function ChatInterFace() {
 
                 {activeView === "chat" && (
                     <section className="flex min-h-0 flex-1 flex-col items-center px-5 py-7 md:px-7">
-                        <div className="flex w-full max-w-[760px] flex-1 flex-col gap-6 overflow-y-auto">
+                        <div className="flex w-full max-w-190 flex-1 flex-col gap-6 overflow-y-auto">
                             {messages.length === 0 ? (
                                 <div className="flex flex-1 flex-col justify-center gap-2 py-12">
                                     <h2 className="m-0 text-[32px] font-semibold leading-tight tracking-tight">
@@ -534,7 +534,7 @@ export default function ChatInterFace() {
 
                 {(activeView === "image" || activeView === "video") && (
                     <section className="flex min-h-0 flex-1 flex-col items-center px-5 py-7 md:px-7">
-                        <div className="flex w-full max-w-[980px] flex-1 flex-col gap-5">
+                        <div className="flex w-full max-w-245 flex-1 flex-col gap-5">
                             <div className="flex flex-1 flex-col justify-center gap-2 py-12">
                                 <h2 className="m-0 text-[32px] font-semibold leading-tight tracking-tight">
                                     {viewHeading}
@@ -548,7 +548,7 @@ export default function ChatInterFace() {
                             <div className="grid grid-cols-[repeat(auto-fit,minmax(min(280px,100%),1fr))] gap-4">
                                 {[0, 1].map((tile) => (
                                     <figure key={tile} className="m-0 flex flex-col gap-2">
-                                        <div className="flex aspect-[16/10] items-center justify-center rounded-xl border border-[#2A2F38] bg-[repeating-linear-gradient(135deg,#1B1F26_0_10px,#171A20_10px_20px)]">
+                                        <div className="flex aspect-16/10 items-center justify-center rounded-xl border border-[#2A2F38] bg-[repeating-linear-gradient(135deg,#1B1F26_0_10px,#171A20_10px_20px)]">
                                             <span className="font-mono text-xs text-[#9BA1AD]">
                                                 {activeView === "image" ? "Image preview" : "Video preview"}
                                             </span>
@@ -565,7 +565,7 @@ export default function ChatInterFace() {
 
                 {activeView === "files" && (
                     <section className="flex flex-1 flex-col items-center px-5 py-7 md:px-7">
-                        <div className="flex w-full max-w-[760px] flex-col gap-6">
+                        <div className="flex w-full max-w-190 flex-col gap-6">
                             <label
                                 htmlFor="files-in"
                                 onDragOver={(event) => {
@@ -630,7 +630,7 @@ export default function ChatInterFace() {
                                                 onClick={() => removeLibraryFile(id)}
                                                 className={`${sharedButtonStyles} grid h-10 w-10 shrink-0 place-items-center text-[#FF9A92] hover:bg-[#2A303A]`}
                                             >
-                                                <Icon className="h-[18px] w-[18px]">
+                                                <Icon className="h-4.5 w-4.5">
                                                     <path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3" />
                                                 </Icon>
                                             </button>
@@ -645,7 +645,7 @@ export default function ChatInterFace() {
                 {chatOrGenerationView && (
                     <div className="flex flex-col items-center gap-3 px-5 pb-6 md:px-7">
                         {attachedFiles.length > 0 && (
-                            <div className="flex w-full max-w-[760px] flex-wrap gap-2">
+                            <div className="flex w-full max-w-190 flex-wrap gap-2">
                                 {attachedFiles.map(({ id, file }) => (
                                     <span
                                         key={id}
@@ -676,7 +676,7 @@ export default function ChatInterFace() {
 
                         <form
                             onSubmit={sendMessage}
-                            className="flex w-full max-w-[760px] items-end gap-3 rounded-2xl border border-[#2A2F38] bg-[#14171C] p-2.5 pl-4"
+                            className="flex w-full max-w-190 items-end gap-3 rounded-2xl border border-[#2A2F38] bg-[#14171C] p-2.5 pl-4"
                         >
                             {activeView === "chat" && (
                                 <button
@@ -748,7 +748,7 @@ export default function ChatInterFace() {
                         role="dialog"
                         aria-modal="true"
                         aria-labelledby="keys-title"
-                        className="flex w-full max-w-[620px] flex-col gap-6 rounded-[18px] border border-[#2A2F38] bg-[#14171C] p-6 shadow-2xl"
+                        className="flex w-full max-w-155 flex-col gap-6 rounded-[18px] border border-[#2A2F38] bg-[#14171C] p-6 shadow-2xl"
                     >
                         <div className="flex items-start justify-between gap-4">
                             <div className="flex flex-col gap-1">
@@ -765,7 +765,7 @@ export default function ChatInterFace() {
                                 onClick={() => setKeysOpen(false)}
                                 className={`${sharedButtonStyles} grid h-9 w-9 shrink-0 place-items-center hover:bg-[#2A303A]`}
                             >
-                                <Icon className="h-[18px] w-[18px]">
+                                <Icon className="h-4.5 w-4.5">
                                     <path d="M6 6l12 12M18 6L6 18" />
                                 </Icon>
                             </button>
