@@ -3,7 +3,7 @@ import { type Request, type Response } from "express";
 
 const router = express.Router();
 
-router.get("/login", (_req: Request, res: Response) => {
+router.post("/login", (_req: Request, res: Response) => {
     res.send("Login route");
 });
 

@@ -3,13 +3,13 @@ export default function FooterSection() {
         <div className="border-t border-white/20 bg-black/20 px-6 py-10 text-white">
             <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 <section aria-labelledby="footer-sponsors">
-                    <h2 id="footer-sponsors" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
+                    <h2 id="footer-sponsors" className="mb-3 text-xl font-semibold transition-transform duration-200 hover:scale-105 hover:font-bold hover:underline hover:underline-offset-4">
                         Sponsors
                     </h2>
                 </section>
 
                 <section aria-labelledby="footer-help">
-                    <h2 id="footer-help" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
+                    <h2 id="footer-help" className="mb-3 text-xl font-semibold transition-transform duration-200 hover:scale-105 hover:font-bold hover:underline hover:underline-offset-4">
                         Help
                     </h2>
                     <p className="text-sm text-white/70">
@@ -18,19 +18,16 @@ export default function FooterSection() {
                 </section>
 
                 <section aria-labelledby="footer-documentation">
-                    <h2 id="footer-documentation" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
+                    <h2 id="footer-documentation" className="mb-3 text-xl font-semibold transition-transform duration-200 hover:scale-105 hover:font-bold hover:underline hover:underline-offset-4">
                         Documentation
                     </h2>
-                    <p className="text-sm text-white/70">
-                        Find guides and information about SmilyAI.
-                    </p>
                     <p className="text-sm text-white/70">
                         Find guides and information about SmilyAI.
                     </p>
                 </section>
 
                 <section aria-labelledby="footer-feedback">
-                    <h2 id="footer-feedback" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
+                    <h2 id="footer-feedback" className="mb-3 text-xl font-semibold transition-transform duration-200 hover:scale-105 hover:font-bold hover:underline hover:underline-offset-4">
                         Feedback
                     </h2>
                     <form>
