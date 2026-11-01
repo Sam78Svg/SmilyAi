@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 
 const navigationItems = [
@@ -63,12 +63,6 @@ function AccountLinks({ onNavigate }: { onNavigate?: () => void }) {
 
 export default function Navigationbar() {
     const [menuOpen, setMenuOpen] = useState(false)
-    const { pathname } = useLocation()
-
-    useEffect(() => {
-        setMenuOpen(false)
-    }, [pathname])
-
     return (
         <nav
             aria-label="Main navigation"
@@ -83,11 +77,11 @@ export default function Navigationbar() {
                     <span className="text-xl font-semibold tracking-tight">SmilyAI</span>
                 </Link>
 
-                <div className="hidden items-center gap-3 text-sm md:flex">
+                <div className="hidden items-center gap-3 text-sm lg:flex">
                     <NavigationLinks />
                 </div>
 
-                <div className="hidden items-center gap-2 md:flex">
+                <div className="hidden items-center gap-2 lg:flex">
                     <AccountLinks />
                 </div>
 
@@ -97,7 +91,7 @@ export default function Navigationbar() {
                     aria-expanded={menuOpen}
                     aria-controls="mobile-navigation"
                     onClick={() => setMenuOpen((open) => !open)}
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 text-white transition hover:border-white/30 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0] md:hidden"
+                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 text-white transition hover:border-white/30 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0] lg:hidden"
                 >
                     <svg
                         aria-hidden="true"
@@ -120,7 +114,7 @@ export default function Navigationbar() {
             {menuOpen && (
                 <div
                     id="mobile-navigation"
-                    className="border-t border-white/10 bg-[#080D1C]/95 px-2 pb-5 pt-3 md:hidden"
+                    className="border-t border-white/10 bg-[#080D1C]/95 px-2 pb-5 pt-3 lg:hidden"
                 >
                     <div className="flex flex-col gap-1 text-sm">
                         <NavigationLinks onNavigate={() => setMenuOpen(false)} />
