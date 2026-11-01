@@ -76,7 +76,7 @@ export default function About() {
                         </div>
                         <h1 className="max-w-3xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
                             AI should feel like{" "}
-                            <span className="bg-gradient-to-r from-[#9AD6FF] via-white to-[#8FE3B0] bg-clip-text text-transparent">
+                            <span className="bg-linear-to-r from-[#9AD6FF] via-white to-[#8FE3B0] bg-clip-text text-transparent">
                                 one tool,
                             </span>{" "}
                             not a dozen.
@@ -106,7 +106,7 @@ export default function About() {
                     </div>
 
                     <div className="relative mx-auto w-full max-w-lg">
-                        <div className="absolute -inset-8 rounded-[2rem] bg-[#547DFF]/15 blur-3xl" />
+                        <div className="absolute -inset-8 rounded-4xl bg-[#547DFF]/15 blur-3xl" />
                         <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-[#0A1021]/75 p-5 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-6">
                             <div className="flex items-center justify-between border-b border-white/10 pb-4">
                                 <div>
@@ -119,7 +119,7 @@ export default function About() {
                             </div>
 
                             <div className="mt-5 space-y-3">
-                                <div className="rounded-2xl border border-white/10 bg-white/[0.045] p-4">
+                                <div className="rounded-2xl border border-white/10 bg-white/4.5 p-4">
                                     <div className="mb-3 flex items-center justify-between">
                                         <span className="text-xs text-white/50">Connected providers</span>
                                         <span className="text-xs text-[#A7F0C3]">Your API keys</span>
@@ -128,7 +128,7 @@ export default function About() {
                                         {["OpenAI", "Anthropic", "Google", "+ more"].map((provider) => (
                                             <span
                                                 key={provider}
-                                                className="rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-white/75"
+                                                className="rounded-lg border border-white/10 bg-white/4 px-3 py-1.5 text-xs text-white/75"
                                             >
                                                 {provider}
                                             </span>
@@ -152,7 +152,7 @@ export default function About() {
                                     ))}
                                 </div>
 
-                                <div className="flex items-center gap-3 rounded-2xl border border-[#9AD6FF]/15 bg-[#9AD6FF]/[0.06] p-4">
+                                <div className="flex items-center gap-3 rounded-2xl border border-[#9AD6FF]/15 bg-[#9AD6FF]/6 p-4">
                                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#9AD6FF]/10 text-[#9AD6FF]">
                                         <Icon>
                                             <path d="M12 3v18M3 12h18" />
@@ -186,10 +186,10 @@ export default function About() {
                         {capabilities.map(({ number, title, description, icon }) => (
                             <article
                                 key={number}
-                                className="group rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition duration-200 hover:-translate-y-1 hover:border-[#9AD6FF]/30 hover:bg-white/[0.055]"
+                                className="group rounded-2xl border border-white/10 bg-white/[0.035] p-6 transition duration-200 hover:-translate-y-1 hover:border-[#9AD6FF]/30 hover:bg-white/5.5"
                             >
                                 <div className="mb-8 flex items-center justify-between">
-                                    <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#9AD6FF]/15 bg-[#9AD6FF]/[0.08] text-[#9AD6FF] transition group-hover:border-[#9AD6FF]/30">
+                                    <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#9AD6FF]/15 bg-[#9AD6FF]/8 text-[#9AD6FF] transition group-hover:border-[#9AD6FF]/30">
                                         <Icon>{icon}</Icon>
                                     </span>
                                     <span className="text-xs tracking-widest text-white/30">{number}</span>
@@ -204,7 +204,7 @@ export default function About() {
                 <section
                     id="how-it-works"
                     aria-labelledby="about-flow"
-                    className="rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.025] px-6 py-10 sm:px-10 sm:py-12"
+                    className="rounded-3xl border border-white/10 bg-linear-to-br from-white/[0.07] to-white/2.5 px-6 py-10 sm:px-10 sm:py-12"
                 >
                     <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
                         <div>
@@ -237,7 +237,7 @@ export default function About() {
                     <p className="text-sm text-white/60">Ready to bring your AI tools together?</p>
                     <Link
                         to="/chat"
-                        className="mt-5 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.08] px-5 py-3 text-sm font-medium text-white transition hover:border-[#8FE3B0]/40 hover:bg-[#8FE3B0]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0]"
+                        className="mt-5 inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/8 px-5 py-3 text-sm font-medium text-white transition hover:border-[#8FE3B0]/40 hover:bg-[#8FE3B0]/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0]"
                     >
                         Open SmilyAI
                         <Icon className="h-4 w-4">
