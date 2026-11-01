@@ -4,8 +4,7 @@
     width: 100%;
     height: auto;
     min-height: 100vh;
-    overflow-x: clip;
-    overflow-y: visible;
+    overflow: clip;
     background: var(--color-2);
     transform: translateZ(0);
 }
