@@ -165,7 +165,7 @@ export default function Authentication() {
                             aria-invalid={showEmailError}
                             aria-describedby={showEmailError ? "auth-email-error" : undefined}
                             placeholder="you@example.com"
-                            className={`w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#8FE3B0]/60 focus:ring-2 focus:ring-[#8FE3B0]/15 ${
+                            className={`w-full rounded-xl border bg-white/4 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#8FE3B0]/60 focus:ring-2 focus:ring-[#8FE3B0]/15 ${
                                 showEmailError ? "border-rose-400/70" : "border-white/15"
                             }`}
                         />
@@ -203,7 +203,7 @@ export default function Authentication() {
                                 aria-invalid={showPasswordError}
                                 aria-describedby="password-requirements"
                                 placeholder="Enter your password"
-                                className={`w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#8FE3B0]/60 focus:ring-2 focus:ring-[#8FE3B0]/15 ${
+                                className={`w-full rounded-xl border bg-white/4 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#8FE3B0]/60 focus:ring-2 focus:ring-[#8FE3B0]/15 ${
                                     showPasswordError ? "border-rose-400/70" : "border-white/15"
                                 }`}
                             />
@@ -236,7 +236,7 @@ export default function Authentication() {
                                 aria-invalid={showConfirmError}
                                 aria-describedby={showConfirmError ? "confirm-password-error" : undefined}
                                 placeholder="Re-enter your password"
-                                className={`w-full rounded-xl border bg-white/[0.04] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#8FE3B0]/60 focus:ring-2 focus:ring-[#8FE3B0]/15 ${
+                                className={`w-full rounded-xl border bg-white/4 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/30 focus:border-[#8FE3B0]/60 focus:ring-2 focus:ring-[#8FE3B0]/15 ${
                                     showConfirmError ? "border-rose-400/70" : "border-white/15"
                                 }`}
                             />
@@ -261,7 +261,7 @@ export default function Authentication() {
                 </form>
 
                 {notice && (
-                    <p role="status" className="mt-4 rounded-xl border border-amber-300/20 bg-amber-200/[0.06] px-4 py-3 text-sm leading-5 text-amber-100/90">
+                    <p role="status" className="mt-4 rounded-xl border border-amber-300/20 bg-amber-200/6 px-4 py-3 text-sm leading-5 text-amber-100/90">
                         {notice}
                     </p>
                 )}
