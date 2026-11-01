@@ -1,61 +1,63 @@
+import { Link } from "react-router-dom"
+
+const linkStyle =
+    "inline-flex w-fit rounded-md text-sm text-white/60 transition hover:text-[#A7F0C3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0]"
+
 export default function FooterSection() {
     return (
-        <div className="border-t border-white/20 bg-black/20 px-6 py-10 text-white">
-            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                <section aria-labelledby="footer-sponsors">
-                    <h2 id="footer-sponsors" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
-                        Sponsors
-                    </h2>
-                </section>
-
-                <section aria-labelledby="footer-help">
-                    <h2 id="footer-help" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
-                        Help
-                    </h2>
-                    <p className="text-sm text-white/70">
-                        Need a hand? We’re here to help.
+        <div className="relative z-10 border-t border-white/10 bg-[#070B16]/75 px-5 py-12 text-white backdrop-blur-xl sm:px-8 sm:py-14">
+            <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+                <section className="col-span-2 sm:col-span-3 lg:col-span-1">
+                    <Link
+                        to="/"
+                        className="inline-flex rounded-lg text-lg font-semibold tracking-tight text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8FE3B0]"
+                    >
+                        SmilyAI<span className="text-[#8FE3B0]">.</span>
+                    </Link>
+                    <p className="mt-3 max-w-xs text-sm leading-6 text-white/55">
+                        Your models, media tools, and AI workflows—together in one
+                        workspace.
                     </p>
                 </section>
 
-                <section aria-labelledby="footer-documentation">
-                    <h2 id="footer-documentation" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
-                        Documentation
+                <nav aria-labelledby="footer-explore">
+                    <h2 id="footer-explore" className="mb-4 text-sm font-semibold text-white/90">
+                        Explore
                     </h2>
-                    <p className="text-sm text-white/70">
-                        Find guides and information about SmilyAI.
-                    </p>
-                    <p className="text-sm text-white/70">
-                        Find guides and information about SmilyAI.
-                    </p>
-                </section>
+                    <ul className="space-y-3">
+                        <li><Link className={linkStyle} to="/about">About SmilyAI</Link></li>
+                        <li><Link className={linkStyle} to="/chat">Workspace</Link></li>
+                        <li><Link className={linkStyle} to="/support">Support</Link></li>
+                    </ul>
+                </nav>
 
-                <section aria-labelledby="footer-feedback">
-                    <h2 id="footer-feedback" className="mb-3 text-xl transformation transition-all duration-200 hover:scale-105 font-semibold hover:font-bold hover:underline hover:underline-offset-5 ">
-                        Feedback
+                <nav aria-labelledby="footer-tools">
+                    <h2 id="footer-tools" className="mb-4 text-sm font-semibold text-white/90">
+                        Workspace
                     </h2>
-                    <form>
-                        <label htmlFor="footer-feedback-message" className="sr-only">
-                            Your feedback
-                        </label>
-                        <textarea
-                            id="footer-feedback-message"
-                            name="feedback"
-                            rows={3}
-                            className="w-full resize-y rounded-md border border-white/30 bg-white/10 p-3 text-sm text-white placeholder:text-white/50 focus:border-white/60 focus:outline-none focus:ring-2 focus:ring-white/30"
-                            placeholder="Share your feedback..."
-                        />
-                        <button
-                            type="button"
-                            className="mt-3 rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-900 transition hover:bg-white/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                        >
-                            Send
-                        </button>
-                    </form>
-                </section>
+                    <ul className="space-y-3">
+                        <li><Link className={linkStyle} to="/chat">AI chat</Link></li>
+                        <li><Link className={linkStyle} to="/chat">Image generation</Link></li>
+                        <li><Link className={linkStyle} to="/chat">Video creation</Link></li>
+                    </ul>
+                </nav>
+
+                <nav aria-labelledby="footer-account">
+                    <h2 id="footer-account" className="mb-4 text-sm font-semibold text-white/90">
+                        Account
+                    </h2>
+                    <ul className="space-y-3">
+                        <li><Link className={linkStyle} to="/login">Log in</Link></li>
+                        <li><Link className={linkStyle} to="/signup">Create an account</Link></li>
+                        <li><Link className={linkStyle} to="/forgot-password">Reset password</Link></li>
+                    </ul>
+                </nav>
             </div>
-            <p className="relative z-10 m-0 mt-10 px-4 text-center text-sm text-white/80">
-                &copy; {new Date().getFullYear()} SmilyAI
-            </p>
+
+            <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-2 border-t border-white/10 pt-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+                <p>&copy; {new Date().getFullYear()} SmilyAI. All rights reserved.</p>
+                <p>One workspace for the way you use AI.</p>
+            </div>
         </div>
     )
 }
