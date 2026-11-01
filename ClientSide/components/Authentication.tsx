@@ -207,17 +207,10 @@ export default function Authentication() {
                                     showPasswordError ? "border-rose-400/70" : "border-white/15"
                                 }`}
                             />
-                            <ul id="password-requirements" className="mt-3 grid grid-cols-1 gap-2 text-xs sm:grid-cols-2">
-                                {passwordValidity.map(({ label, valid }) => (
-                                    <li key={label} className={valid ? "text-[#A7F0C3]" : "text-white/45"}>
-                                        <span aria-hidden="true" className="mr-2">{valid ? "✓" : "○"}</span>
-                                        {label}
-                                    </li>
-                                ))}
-                            </ul>
+                          
                             {showPasswordError && (
                                 <p className="mt-2 text-xs text-rose-300">
-                                    Your password must meet every requirement above.
+                                    Your password must meet every requirement.
                                 </p>
                             )}
                         </div>
