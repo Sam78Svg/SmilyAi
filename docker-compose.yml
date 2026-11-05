@@ -1,0 +1,25 @@
+services:
+  client:
+    build:
+      context: .
+      dockerfile: ClientSide/Dockerfile
+      target: build
+    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]
+    ports:
+      - "5173:5173"
+    environment:
+      API_PROXY_TARGET: http://server:5000
+    volumes:
+      - ./ClientSide:/app/ClientSide
+      - /app/ClientSide/node_modules
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: .
+      dockerfile: ServerSide/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      PORT: 5000
