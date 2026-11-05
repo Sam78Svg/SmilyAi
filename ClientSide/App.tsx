@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Outlet, Route, Routes, useLocation } from "react-router-dom"
+import { BrowserRouter as Router, Link, Outlet, Route, Routes, useLocation } from "react-router-dom"
 import { lazy, Suspense } from "react"
 import GlassFold from "./components/Background"
 import FooterSection from "./components/FooterSection"
 import Navigationbar from "./components/Navigationbar"
+import Fallback from "./components/Fallback"
 
 const ChatInterface = lazy(() => import("./components/ChatInterFace"))
 const About = lazy(() => import("./components/About"))
@@ -26,6 +27,16 @@ function SiteLayout() {
     )
 }
 
+function NotFound() {
+    return (
+        <main className="flex min-h-screen flex-col items-center justify-center gap-4 text-center text-white">
+            <h1 className="text-4xl font-bold">Page not found</h1>
+            <p>The page you are looking for does not exist.</p>
+            <Link className="underline" to="/">Return home</Link>
+        </main>
+    )
+}
+
 function App() {
     const cssProps = {
         color1: "#1e3cc8",
@@ -39,7 +50,7 @@ function App() {
     return (
         <GlassFold {...cssProps}>
             <Router>
-                <Suspense fallback={<div>Loading page...</div>}>
+                <Suspense fallback={<Fallback />}>
                     <Routes>
                         <Route element={<SiteLayout />}>
                             <Route path="/" element={<Home />} />
@@ -49,7 +60,9 @@ function App() {
                             <Route path="/signup" element={<Authentication key="/signup" />} />
                             <Route path="/forgot-password" element={<Authentication key="/forgot-password" />} />
                         </Route>
+                        <Route path="/fallback" element={<Fallback />} />
                         <Route path="/chat" element={<ChatInterface />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </Suspense>
             </Router>
