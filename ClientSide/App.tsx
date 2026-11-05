@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react"
 import GlassFold from "./components/Background"
 import FooterSection from "./components/FooterSection"
 import Navigationbar from "./components/Navigationbar"
+import Fallback from "./components/Fallback"
 
 const ChatInterface = lazy(() => import("./components/ChatInterFace"))
 const About = lazy(() => import("./components/About"))
@@ -39,7 +40,7 @@ function App() {
     return (
         <GlassFold {...cssProps}>
             <Router>
-                <Suspense fallback={<div>Loading page...</div>}>
+                <Suspense fallback={<Fallback />}>
                     <Routes>
                         <Route element={<SiteLayout />}>
                             <Route path="/" element={<Home />} />
@@ -49,6 +50,7 @@ function App() {
                             <Route path="/signup" element={<Authentication key="/signup" />} />
                             <Route path="/forgot-password" element={<Authentication key="/forgot-password" />} />
                         </Route>
+                        <Route path="/fallback" element={<Fallback />} />
                         <Route path="/chat" element={<ChatInterface />} />
                     </Routes>
                 </Suspense>
