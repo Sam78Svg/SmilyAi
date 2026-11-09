@@ -20,7 +20,7 @@ const models = [
     { provider: "Google", name: "Gemini 2.5 Pro", detail: "Advanced multimodal" },
 ];
 
-const starterHistory = [];
+const starterHistory: string[] = [];
 
 const sharedButtonStyles =
     "rounded-xl transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0]";
