@@ -20,11 +20,7 @@ const models = [
     { provider: "Google", name: "Gemini 2.5 Pro", detail: "Advanced multimodal" },
 ];
 
-const starterHistory = [
-    "Compare the latest models",
-    "Planning a new project",
-    "Draft a product brief",
-];
+const starterHistory = [];
 
 const sharedButtonStyles =
     "rounded-xl transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0]";
@@ -186,7 +182,7 @@ export default function ChatInterFace() {
                             <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" />
                         </Icon>
                     </span>
-                    <span className="text-[17px] font-bold tracking-tight">Prism</span>
+                    <span className="text-[17px] font-bold tracking-tight">SmilyAi</span>
                 </div>
 
                 <nav aria-label="Workspace" className="flex flex-col gap-1">

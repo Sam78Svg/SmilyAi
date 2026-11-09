@@ -1,4 +1,3 @@
-
 // @ts-expect-error The installed `pg` package does not include TypeScript declarations.
 import {Pool} from 'pg'
 import dotenv from 'dotenv'
@@ -20,7 +19,7 @@ pool.query("select NOW()")
         console.log("DB connection successful:", result.row[0]);
     })
     .catch((err: any) => {
-         console.error('[db] PostgreSQL test FAILED');
+        console.error('[db] PostgreSQL test FAILED');
         console.error('name:', err.name);
         console.error('message:', err.message);
         console.error('code:', err.code);
