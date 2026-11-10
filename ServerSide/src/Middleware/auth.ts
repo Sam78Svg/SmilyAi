@@ -1,7 +1,5 @@
-import jwt, {
-    JsonWebTokenError,
-    type JwtPayload,
-} from "jsonwebtoken";
+import jwt from "jsonwebtoken";
+import type { JwtPayload } from "jsonwebtoken";
 import type { RequestHandler, Response } from "express";
 
 export type AuthenticatedClaims = JwtPayload & {
@@ -62,7 +60,7 @@ export const authenticateToken: RequestHandler = (req, res, next) => {
         req.auth = payload;
         next();
     } catch (error) {
-        if (error instanceof JsonWebTokenError) {
+        if (error instanceof jwt.JsonWebTokenError) {
             rejectUnauthorized(res, true);
             return;
         }
