@@ -8,11 +8,9 @@ export type AuthenticatedClaims = JwtPayload & {
     sub: string;
 };
 
-declare global {
-    namespace Express {
-        interface Request {
-            auth?: AuthenticatedClaims;
-        }
+declare module "express-serve-static-core" {
+    interface Request {
+        auth?: AuthenticatedClaims;
     }
 }
 
