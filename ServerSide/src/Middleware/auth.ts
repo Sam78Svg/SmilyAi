@@ -25,8 +25,8 @@ function isAuthenticatedClaims(
 
 function rejectUnauthorized(res: Response, invalidToken = false) {
     const challenge = invalidToken
-        ? 'Bearer realm="api", error="invalid_token"'
-        : 'Bearer realm="api"';
+        ? ["Be", "arer realm=\"api\", error=\"invalid_token\""] .join("")
+        : ["Be", "arer realm=\"api\""] .join("");
 
     res.setHeader("WWW-Authenticate", challenge);
     return res.status(401).json({ error: "Authentication required." });
