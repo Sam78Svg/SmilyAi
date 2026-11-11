@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express, { type Request, type Response } from 'express'
 import cors from 'cors'
+import { pathToFileURL } from 'node:url'
 import authRoutes from './src/Routes/authRoutes.ts'
 import interactionRoutes from './src/Routes/interactionRoutes.ts'
 import { authenticateToken } from './src/Middleware/auth.ts'
@@ -14,10 +15,14 @@ app.use('/api/auth', authRoutes)
 app.use('/api/interactions', authenticateToken, interactionRoutes)
 
 app.get('/', (_req: Request, res: Response) => {
-    console.log("Hello World")
-    res.send("Listening")
+    console.log('Hello World')
+    res.send('Listening')
 })
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
-})
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`)
+    })
+}
+
+export default app
