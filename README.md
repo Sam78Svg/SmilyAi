@@ -61,11 +61,10 @@ Before running the project, ensure you have the following installed:
 
    The project uses a `.env` file for configuration. Create the necessary environment files:
 
-   - **Root `.env`** (optional): Set `PORT` and other global variables.
-   - **`ServerSide/.env`**: Configure the Express server port and any API keys.
+   - **Root `.env`**: Configure the Express server and authentication.
    - **`ClientSide/.env`**: If needed, configure Vite-specific environment variables (prefixed with `VITE_`).
 
-   Example `.env` files are not provided – copy the structure from the project and add your values.
+   Set `JWT_SECRET` to a strong, private secret in the root `.env` before using protected endpoints. The server verifies HS256 Bearer tokens and requires a non-empty `sub` claim. Never commit the secret.
 
 ## 💻 Development
 
@@ -209,6 +208,7 @@ Key settings:
 - Enables CORS globally
 - Parses JSON bodies
 - Mounts route handlers at `/api/auth` and `/api/interactions`
+- Requires a valid `Authorization: Bearer <token>` JWT for `/api/interactions`
 - Provides a health-check endpoint at `GET /`
 
 ## 🤝 Contributing
