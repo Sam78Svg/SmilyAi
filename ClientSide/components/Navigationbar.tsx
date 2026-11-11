@@ -26,11 +26,10 @@ function NavigationLinks({ onNavigate }: { onNavigate?: () => void }) {
                         to={path}
                         onClick={onNavigate}
                         aria-current={isActive ? "page" : undefined}
-                        className={`rounded-lg px-2 py-2 font-medium underline-offset-4 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0] ${
-                            isActive
+                        className={`rounded-lg px-2 py-2 font-medium underline-offset-4 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8FE3B0] ${isActive
                                 ? "text-[#8FE3B0] underline"
                                 : "text-[#ECEDEF] hover:text-[#8FE3B0] hover:underline"
-                        }`}
+                            }`}
                     >
                         {label}
                     </Link>
@@ -69,13 +68,28 @@ export default function Navigationbar() {
             className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#080D1C]/75 px-4 shadow-lg backdrop-blur-xl sm:px-6"
         >
             <div className="mx-auto flex min-h-18 max-w-7xl items-center justify-between gap-4">
-                <Link
-                    to="/"
-                    className="shrink-0 rounded-lg text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8FE3B0]"
-                    aria-label="SmilyAI home"
-                >
-                    <span className="text-xl font-semibold tracking-tight">SmilyAI</span>
-                </Link>
+                <div className="hidden items-center gap-3 text-sm lg:flex">
+                    <span className="grid h-8 w-8 place-items-center rounded-[9px] bg-[#8FE3B0] text-[#0B1A12]">
+                        <svg
+                            aria-hidden="true"
+                            className="h-4.5 w-4.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                        >
+                            <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" />
+                        </svg>
+                    </span>
+                    <Link
+                        to="/"
+                        className="shrink-0 rounded-lg text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8FE3B0]"
+                        aria-label="SmilyAI home"
+                    >
+                        <span className="text-xl font-semibold tracking-tight">SmilyAI</span>
+                    </Link>
+                </div>
 
                 <div className="hidden items-center gap-3 text-sm lg:flex">
                     <NavigationLinks />
@@ -109,6 +123,27 @@ export default function Navigationbar() {
                         )}
                     </svg>
                 </button>
+
+                <Link
+                    to="/"
+                    className="flex shrink-0 items-center gap-3 rounded-lg text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8FE3B0] lg:hidden"
+                    aria-label="SmilyAI home"
+                >
+                    <span className="grid h-8 w-8 place-items-center rounded-[9px] bg-[#8FE3B0] text-[#0B1A12]">
+                        <svg
+                            aria-hidden="true"
+                            className="h-4.5 w-4.5"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                        >
+                            <path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" />
+                        </svg>
+                    </span>
+                    <span className="text-xl font-semibold tracking-tight">SmilyAI</span>
+                </Link>
             </div>
 
             {menuOpen && (
@@ -124,7 +159,6 @@ export default function Navigationbar() {
                     </div>
                 </div>
             )}
-.
         </nav>
     )
 }
