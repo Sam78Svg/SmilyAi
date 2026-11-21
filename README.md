@@ -251,5 +251,3 @@ Deploy `ServerSide/server.ts` to a Node.js hosting provider (Render, Railway, He
 This project is **private** and source code is not publicly licensed. All rights reserved.
 
 ---
-
-*Generated with ❤️ by Copilot SDK in VS Code*
